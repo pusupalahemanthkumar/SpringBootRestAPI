@@ -13,6 +13,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { PostDetailComponent } from './pages/single-post-page/post-detail/post-detail.component';
 import { CommentComponent } from './pages/single-post-page/comment/comment.component';
 import { PostItemComponent } from './pages/all-posts-page/post-item/post-item.component';
+import { PostsGeneralComponent } from './pages/all-posts-page/posts-general/posts-general.component';
+import { PostsJobsComponent } from './pages/all-posts-page/posts-jobs/posts-jobs.component';
+import { PostsTechComponent } from './pages/all-posts-page/posts-tech/posts-tech.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { PostItemComponent } from './pages/all-posts-page/post-item/post-item.co
     RegisterPageComponent,
     PostDetailComponent,
     CommentComponent,
-    PostItemComponent
+    PostItemComponent,
+    PostsGeneralComponent,
+    PostsJobsComponent,
+    PostsTechComponent,
   ],
   imports: [
     BrowserModule,

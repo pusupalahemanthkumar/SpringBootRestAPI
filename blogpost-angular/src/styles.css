@@ -47,7 +47,8 @@ body{
   border-radius: 5px;
   color:var(--light-color);
 }
-.navbar .nav-links li a:hover
+.navbar .nav-links li a:hover,
+.active
 
 {
  border-bottom: 5px solid var(--primary-color);
@@ -74,7 +75,9 @@ body{
   text-decoration: none;
   color:var(--light-color);
 }
-.mobile-links li a:hover{
+.mobile-links li a:hover,
+.m-active
+{
   color:var(--dark-color);
 }
 .open{
@@ -114,7 +117,9 @@ body{
   color:var(--dark-color);
   padding: 0.7rem 1rem;
 }
-.posts-nav .posts-nav-links li a:hover{
+.posts-nav .posts-nav-links li a:hover,
+.post-nav-active
+{
   border-bottom: 4px solid var(--primary-color);
   color:var(--primary-color);
 }

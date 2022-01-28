@@ -1,12 +1,10 @@
 <div class="main-container-posts">
   <div class="posts-nav">
     <ul class="posts-nav-links">
-      <li><a href="#">General</a></li>
-      <li><a href="#">Jobs</a></li>
-      <li><a href="#">Technology</a></li>
+      <li><a routerLinkActive="post-nav-active" [routerLink]="['general']">General</a></li>
+      <li><a routerLinkActive="post-nav-active" [routerLink]="['jobs']">Jobs</a></li>
+      <li><a routerLinkActive="post-nav-active" [routerLink]="['tech']">Technology</a></li>
     </ul>
   </div>
-  <div class="container-posts">
-    <app-post-item *ngFor="let post of posts; let i =index" [post]="post"></app-post-item>
-  </div>
+  <router-outlet></router-outlet>
 </div>

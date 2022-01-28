@@ -1,16 +1,16 @@
 <nav class="navbar">
   <h1 class="logo"><i class="fas fa-cube"></i> TechPost</h1>
   <ul class="nav-links desktop">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Post</a></li>
-      <li><a href="#">Add Post</a></li>
-      <li><a href="#" class="nav-btn">Logout</a></li>
+    <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
+    <li><a routerLinkActive="active" routerLink="/posts/general">Post</a></li>
+    <li><a routerLinkActive="active" routerLink="/add-post">Add Post</a></li>
+    <li><a routerLink="/login" class="nav-btn">Login</a></li>
   </ul>
   <i class="fas fa-bars mobile-menu-bar" id="menu" (click)="ToggleMobileMenu()"></i>
 </nav>
-<ul class={{navbarClass}} id="mobile-links" >
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Post</a></li>
-  <li><a href="#">Add Post</a></li>
-  <li><a href="#" class="nav-btn">Logout</a></li>
+<ul class={{navbarClass}} id="mobile-links">
+  <li><a routerLinkActive="m-active" [routerLinkActiveOptions]="{exact: true}" routerLink="/" >Home</a></li>
+  <li><a [routerLink]="['posts','general']">Post</a></li>
+  <li><a [routerLink]="['add-post']">Add Post</a></li>
+  <li><a [routerLink]="['login']" class="nav-btn">Login</a></li>
 </ul>
