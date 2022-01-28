@@ -10,6 +10,9 @@ import { SinglePostPageComponent } from './pages/single-post-page/single-post-pa
 import { AddPostPageComponent } from './pages/add-post-page/add-post-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { PostDetailComponent } from './pages/single-post-page/post-detail/post-detail.component';
+import { CommentComponent } from './pages/single-post-page/comment/comment.component';
+import { PostItemComponent } from './pages/all-posts-page/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     SinglePostPageComponent,
     AddPostPageComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    PostDetailComponent,
+    CommentComponent,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
