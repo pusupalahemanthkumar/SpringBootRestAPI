@@ -1,0 +1,83 @@
+@media(max-width:768px){
+    /* Navbar */
+    .desktop{
+        display: none !important;
+    }
+    .mobile-menu-bar{
+        display: block;
+    }
+    .navbar{
+        height: 4rem;
+        padding: 1rem 1rem;
+    }
+    .logo{
+        font-size: 1.5rem;
+    }
+    /* HomePage */
+    .home-content h1{
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .home-content p{
+        font-size: 1rem;
+    }
+    /* All Post */
+    .main-container-posts{
+        max-width: 90%;
+        margin: 1rem auto;
+    }
+    .container-posts{
+        padding: 1rem 0rem;
+        margin-top: 0rem;
+    }
+    .post-item{
+        margin: 1rem 0;
+        padding: 1rem 1rem;
+    }
+    .post-item h3{
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .post-item p{
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .post-item .posts-icons{
+        margin-top: 1rem;
+    }
+    .post-item .posts-icons  span{
+        margin-bottom: 1rem;
+    }
+    /* Single Post */
+    .main-container-single-post{
+        max-width: 90%;
+    }
+    .single-post-data h3{
+        font-size: 1rem;
+    }
+    .single-post-data p{
+        font-size: 0.9rem;
+    }
+    .single-post-data .post-icons span{
+        margin-bottom: 1rem;
+    }
+    .comment .author-publish_details span{
+        margin-bottom: 1rem;
+    }
+
+    /* Forms */
+    .form-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    .form-wrap {
+        padding: 15px 0rem;
+    }
+    .form-wrap h1{
+        font-size: 1.5rem;
+    }
+    .form-wrap .form-group label{
+        font-size: 1rem;
+    }
+    
+}
