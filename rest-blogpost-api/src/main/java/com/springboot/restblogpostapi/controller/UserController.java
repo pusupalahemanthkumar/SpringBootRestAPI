@@ -3,6 +3,7 @@ package com.springboot.restblogpostapi.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.springboot.restblogpostapi.security.JwtUtil;
 import com.springboot.restblogpostapi.service.UserService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class UserController {
 	
@@ -42,7 +44,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/register")
-	public String registerUser(@RequestBody User theuser) {
+	public Message registerUser(@RequestBody User theuser) {
 		
 		System.out.println("Register Object : "+theuser.getUserName());
 		System.out.println("Register Object : "+theuser.getEmail());
@@ -53,7 +55,7 @@ public class UserController {
 		userService.save(theuser);
 		
 		
-		return "Successfully Created User !! ";
+		return new Message("Successfully Created User !! ");
 	}
 	
 

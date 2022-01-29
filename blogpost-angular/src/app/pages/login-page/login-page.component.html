@@ -1,14 +1,27 @@
 <div class="form-container">
   <div class="form-wrap">
     <h1>Login In</h1>
-    <form>
+    <p *ngIf="error">{{error}}</p>
+    <form (ngSubmit)="onSubmit()"  #loginForm="ngForm">
       <div class="form-group">
-        <label for="email">Email/ UserName</label>
-        <input type="text" name="email" id="email" />
+        <label for="username">UserName</label>
+        <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        ngModel
+        />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        ngModel
+        />
       </div>
       <button type="submit" class="btn">Login</button>
     </form>

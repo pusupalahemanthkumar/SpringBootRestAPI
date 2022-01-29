@@ -4,13 +4,15 @@
     <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
     <li><a routerLinkActive="active" routerLink="/posts/general">Post</a></li>
     <li><a routerLinkActive="active" routerLink="/add-post">Add Post</a></li>
-    <li><a routerLink="/login" class="nav-btn">Login</a></li>
+    <li><a routerLink="/login" class="nav-btn" *ngIf="!isLogin">Login</a></li>
+    <li><a class="nav-btn" *ngIf="isLogin" (click)="onLogout()">Logout</a></li>
   </ul>
   <i class="fas fa-bars mobile-menu-bar" id="menu" (click)="ToggleMobileMenu()"></i>
 </nav>
 <ul class={{navbarClass}} id="mobile-links">
-  <li><a routerLinkActive="m-active" [routerLinkActiveOptions]="{exact: true}" routerLink="/" >Home</a></li>
+  <li><a routerLinkActive="m-active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
   <li><a [routerLink]="['posts','general']">Post</a></li>
   <li><a [routerLink]="['add-post']">Add Post</a></li>
-  <li><a [routerLink]="['login']" class="nav-btn">Login</a></li>
+  <li><a routerLink="/login" class="nav-btn" *ngIf="!isLogin">Login</a></li>
+  <li><a class="nav-btn" *ngIf="isLogin" (click)="onLogout()" >Logout</a></li>
 </ul>
