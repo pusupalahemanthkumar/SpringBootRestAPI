@@ -2,8 +2,6 @@ import { Injectable } from "@angular/core";
 import {
   HttpClient,
   HttpHeaders,
-  HttpParams,
-  HttpEventType
 } from '@angular/common/http';
 
 import {CookieService} from "ngx-cookie-service"
@@ -11,7 +9,9 @@ import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
+
   isAuthenticatedEmitter = new Subject<boolean>();
+
   constructor(private http: HttpClient,private cookie:CookieService) { }
 
   login(username: string, password: string) {
@@ -25,17 +25,15 @@ export class UserService {
         observe: 'response'
       });
   }
-
   logout(){
-    this.cookie.delete('token');
+    localStorage.removeItem('token');
   }
 
   setJwtToken(token:string){
-    this.cookie.set('token',token);
+    localStorage.setItem('token',token);
   }
   getJwtToken(){
-    console.log(this.cookie.get('token'));
-    return this.cookie.get('token');
+    return localStorage.getItem('token');
   }
 
   register(username:string,email:string,password:string){

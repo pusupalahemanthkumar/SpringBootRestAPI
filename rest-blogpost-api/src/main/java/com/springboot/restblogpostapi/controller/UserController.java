@@ -16,7 +16,6 @@ import com.springboot.restblogpostapi.security.JwtUtil;
 import com.springboot.restblogpostapi.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class UserController {
 	

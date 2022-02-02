@@ -18,7 +18,6 @@ import com.springboot.restblogpostapi.security.JwtUtil;
 import com.springboot.restblogpostapi.security.MyUserDetailsService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
 	@Autowired
 	private AuthenticationManager authenticationManager;

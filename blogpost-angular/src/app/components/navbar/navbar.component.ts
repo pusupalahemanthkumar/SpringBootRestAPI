@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { UserService } from "../../services/user.service";
 
@@ -7,16 +8,22 @@ import { UserService } from "../../services/user.service";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit,OnDestroy {
 
   navbarClass = "mobile-links";
   isLogin: boolean = false;
+  authSub:Subscription;
 
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.isAuthenticatedEmitter.subscribe((data) => {
-      this.isLogin = data;
+    if(this.userService.getJwtToken()){
+      this.isLogin=true;
+    }else{
+      this.isLogin=false;
+    }
+    this.authSub=this.userService.isAuthenticatedEmitter.subscribe((data)=>{
+      this.isLogin=data;
     })
   }
   ToggleMobileMenu() {
@@ -30,6 +37,9 @@ export class NavbarComponent implements OnInit {
   onLogout(){
     this.userService.logout();
     this.userService.isAuthenticatedEmitter.next(false);
+  }
+  ngOnDestroy(): void {
+    this.authSub.unsubscribe();
   }
 
 }

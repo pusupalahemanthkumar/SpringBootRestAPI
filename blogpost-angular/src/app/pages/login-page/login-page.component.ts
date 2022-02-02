@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { UserService } from "../../services/user.service";
 
@@ -9,9 +10,10 @@ import { UserService } from "../../services/user.service";
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent implements OnInit {
+export class LoginPageComponent implements OnInit,OnDestroy {
   @ViewChild('loginForm', { static: false }) loginForm: NgForm;
   error=null;
+  userLoginSub:Subscription;
 
   constructor(private userService: UserService,private router: Router) { }
 
@@ -19,7 +21,7 @@ export class LoginPageComponent implements OnInit {
   }
   onSubmit() {
 
-    this.userService.login(
+    this.userLoginSub=this.userService.login(
       this.loginForm.value.username,
       this.loginForm.value.password
     ).
@@ -39,6 +41,9 @@ export class LoginPageComponent implements OnInit {
       }
     )
 
+  }
+  ngOnDestroy(): void {
+      this.userLoginSub.unsubscribe();
   }
 
 }

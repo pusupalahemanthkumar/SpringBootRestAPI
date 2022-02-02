@@ -3,7 +3,7 @@
   <ul class="nav-links desktop">
     <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
     <li><a routerLinkActive="active" routerLink="/posts/general">Post</a></li>
-    <li><a routerLinkActive="active" routerLink="/add-post">Add Post</a></li>
+    <li><a routerLinkActive="active"  *ngIf="isLogin" routerLink="/add-post">Add Post</a></li>
     <li><a routerLink="/login" class="nav-btn" *ngIf="!isLogin">Login</a></li>
     <li><a class="nav-btn" *ngIf="isLogin" (click)="onLogout()">Logout</a></li>
   </ul>
@@ -12,7 +12,7 @@
 <ul class={{navbarClass}} id="mobile-links">
   <li><a routerLinkActive="m-active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a></li>
   <li><a [routerLink]="['posts','general']">Post</a></li>
-  <li><a [routerLink]="['add-post']">Add Post</a></li>
+  <li><a [routerLink]="['add-post']"  *ngIf="isLogin" >Add Post</a></li>
   <li><a routerLink="/login" class="nav-btn" *ngIf="!isLogin">Login</a></li>
   <li><a class="nav-btn" *ngIf="isLogin" (click)="onLogout()" >Logout</a></li>
 </ul>

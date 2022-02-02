@@ -16,7 +16,6 @@ import com.springboot.restblogpostapi.service.CommentService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class CommentController {
 	
