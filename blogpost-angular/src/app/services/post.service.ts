@@ -19,5 +19,20 @@ export class PostService {
         observe: 'response'
       });
   }
+  addPost(title:string,description:string){
+    return this.http.post(`http://localhost:8082/api/posts/`,
+    {
+     title:title,
+     description:description,
+     date:new Date(),
+     likeCount:0
+    },
+    {
+      headers: new HttpHeaders({ 'Authorization': `Bearer ${this.userService.getJwtToken()}` }),
+      observe: 'response'
+
+    });
+
+  }
 
 }
