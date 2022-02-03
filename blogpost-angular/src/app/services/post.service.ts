@@ -32,6 +32,13 @@ export class PostService {
       observe: 'response'
 
     });
+  }
+  getPost(id:number){
+    return this.http
+      .get(`http://localhost:8082/api/posts/${id}`,{
+        headers: new HttpHeaders({ 'Authorization': `Bearer ${this.userService.getJwtToken()}` }),
+        observe: 'response'
+      });
 
   }
 

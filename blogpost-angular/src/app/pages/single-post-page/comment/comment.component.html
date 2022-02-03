@@ -1,17 +1,10 @@
 <div class="comment">
-  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quos eos est
-      accusantium veniam, deserunt voluptate voluptates vitae
-      deleniti molestiae!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quos eos est
-      accusantium veniam, deserunt voluptate voluptates vitae
-      deleniti molestiae!
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta quos eos est
-      accusantium veniam, deserunt voluptate voluptates vitae
-      deleniti molestiae!
+  <p class="text">
+    {{comment.text}}
   </p>
   <div class="author-publish_details">
-      <p>Hemanth Kumat</p>
-      <p>12-04-2022</p>
+      <p>{{comment.author.userName}}</p>
+      <p>{{comment.date}}</p>
       <span> <i class="fas fa-thumbs-up"></i> 10 likes</span>
       <span> <i class="fas fa-thumbs-down"></i> 10 dislikes</span>
       <a href="#" class="comment-del">Delete</a>
