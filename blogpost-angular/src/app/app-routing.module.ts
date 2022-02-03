@@ -11,12 +11,15 @@ import { PostsGeneralComponent } from './pages/all-posts-page/posts-general/post
 import { PostsJobsComponent } from './pages/all-posts-page/posts-jobs/posts-jobs.component';
 import { PostsTechComponent } from './pages/all-posts-page/posts-tech/posts-tech.component';
 
+import { AuthGuard} from "./services/auth.guard";
+
 const routes: Routes = [
   {
     path:'',component:HomePageComponent
   },
   {
     path:'posts',component:AllPostsPageComponent,
+    canActivate: [AuthGuard],
     children:[
       {path:"general",component:PostsGeneralComponent},
       {path:"jobs",component:PostsJobsComponent},
@@ -24,10 +27,12 @@ const routes: Routes = [
     ]
   },
   {
-    path:'add-post',component:AddPostPageComponent
+    path:'add-post',component:AddPostPageComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path:'posts/:id',component:SinglePostPageComponent
+    path:'posts/:id',component:SinglePostPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:'login',component:LoginPageComponent

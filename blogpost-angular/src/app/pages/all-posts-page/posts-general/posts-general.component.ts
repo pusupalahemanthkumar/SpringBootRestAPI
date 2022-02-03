@@ -18,6 +18,7 @@ export class PostsGeneralComponent implements OnInit,OnDestroy {
     this.postsSub=this.postService.getAllPost().subscribe(
       (responseData)=>{
         console.log(responseData.body);
+        this.posts=<[]>responseData.body;
       },
       (err)=>{
         console.log(err);

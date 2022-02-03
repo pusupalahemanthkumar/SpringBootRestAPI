@@ -27,6 +27,16 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
+    	
+    	response.setHeader("Access-Control-Allow-Origin", "*");
+    	response.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS");
+    	response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Accept-Language, Host, Referer, Connection, User-Agent, authorization, sw-useragent, sw-version");
+
+		// Just REPLY OK if request method is OPTIONS for CORS (pre-flight)
+		if ( request.getMethod().equals("OPTIONS") ) {
+			response.setStatus(HttpServletResponse.SC_OK);
+        return;
+       }
 
         final String authorizationHeader = request.getHeader("Authorization");
 
